@@ -1,0 +1,29 @@
+{
+    "name": "nightsocialapp-node",
+    "version": "1.0.0",
+    "engines": {
+        "node": "6.11.x"
+    },
+    "scripts": {
+        "start": "nodemon server",
+        "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    },
+    "cacheDirectories": [
+        "node_modules",
+        "client/node_modules"
+    ],
+    "dependencies": {
+        "body-parser": "^1.18.1",
+        "cors": "^2.8.4",
+        "express": "^4.14.1",
+        "mongoose": "^4.11.11"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Scumworth/nightsocialapp.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "nodemon": "^1.12.1"
+    }
+}
