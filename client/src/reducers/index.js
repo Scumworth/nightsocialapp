@@ -66,7 +66,8 @@ const login = (state = {
 const nightSocialApp = combineReducers({
     router: routerReducer,
     bars,
-    selectedAddress
+    selectedAddress,
+    login
 });
 
 export default nightSocialApp;

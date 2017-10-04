@@ -6,6 +6,7 @@ import SingleBar from './SingleBar';
 
 const Main = ({ handleChange, handleSubmit, selectedAddress, url, results }) => (
     <div>
+       
         { results.length !== 0
                 ? results.map(result => <SingleBar 
                     name = { result.name }
