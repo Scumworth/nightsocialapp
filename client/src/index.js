@@ -18,9 +18,9 @@ ReactDOM.render(
     <Provider store = {store}>
         <ConnectedRouter history = {history}>
             <div>
-                <App
-                    url = 'http://localhost:3001/api'
-                />
+            <App
+                url = 'http://localhost:3001/api'
+            />
             </div>
         </ConnectedRouter>
     </Provider>, 
