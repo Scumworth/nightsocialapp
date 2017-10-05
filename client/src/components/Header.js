@@ -13,7 +13,7 @@ const Header = ({ status, user, handleLogin }) => (
         </Jumbotron>
         { (!status)
                 ? <GoogleLogin
-                    clientId = {process.env.GOOGLE_USER_ID}
+                    clientId = {process.env.GOOGLE_CLIENT_ID}
                     buttonText = "Login with Google"
                     onSuccess = { handleLogin }
                     onFailure = {
