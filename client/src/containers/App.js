@@ -44,7 +44,7 @@ const mapStateToProps = (state) => {
     const { selectedAddress, bars, login } = state;
     const { isFetching, lastUpdated, results } = bars;
     const { status, user } = login;
-    return { selectedAddress, results, isFetching, lastUpdated };
+    return { selectedAddress, results, isFetching, lastUpdated, status, user };
 };
 
 const mapDispatchToProps = (dispatch) => {
