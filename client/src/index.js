@@ -9,7 +9,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import './index.css';
 import App from './containers/App';
 import store, { history } from './store';
-
+console.log('test');
 require('dotenv').config();
 
 //import registerServiceWorker from './registerServiceWorker';
