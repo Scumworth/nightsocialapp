@@ -14,6 +14,8 @@ require('dotenv').config();
 
 //import registerServiceWorker from './registerServiceWorker';
 
+console.log('test');
+console.log(process.env.TEST);
 ReactDOM.render(
     <Provider store = {store}>
         <ConnectedRouter history = {history}>
