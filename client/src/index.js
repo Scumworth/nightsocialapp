@@ -19,7 +19,7 @@ ReactDOM.render(
         <ConnectedRouter history = {history}>
             <div>
             <App
-                url = 'http://localhost:3001/api'
+                url = 'https://agile-hollows-85089.herokuapp.com/api'
             />
             </div>
         </ConnectedRouter>
