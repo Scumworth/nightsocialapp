@@ -1,10 +1,10 @@
 // components/Header.js
 
 import React  from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, Button, Form, FormControl, FormGroup } from 'react-bootstrap';
 import GoogleLogin from 'react-google-login';
 
-const Header = ({ status, user, handleLogin }) => (
+const Header = ({ status, user, handleLogin, handleAddressChange, handleChange, selectedAddress, url }) => (
     <div>
         <Jumbotron style = {{textAlign: 'center'}}>
             <h1>FreeCodeCamp Nightlife App</h1>
@@ -20,7 +20,21 @@ const Header = ({ status, user, handleLogin }) => (
                         response => console.log(response)
                     }
                 />
-                : <p>Hello { user }</p>
+                :
+                <div> 
+                <p>Hello { user }</p>
+                <Form>
+                    <FormGroup>
+                        <FormControl
+                            type = "text"
+                            placeholder = "Choose new address"
+                            onChange = { handleChange }
+                            name = "address"
+                        />
+                        <Button type="button" onClick = { (e) => handleAddressChange(e, selectedAddress, url, status, user) }>Change Address</Button>
+                    </FormGroup>
+                </Form>
+                </div>
         }
     </div>
 );

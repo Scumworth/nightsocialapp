@@ -4,14 +4,27 @@ import React from 'react';
 import { Form, Button, FormControl } from 'react-bootstrap';
 import SingleBar from './SingleBar';
 
-const Main = ({ handleChange, handleSubmit, selectedAddress, url, results }) => (
+const Main = ({ handleChange, handleSubmit, handleGoing, selectedAddress, url,
+    results, allUsersResults, allBarsResults, status, user, userAddress }) => (
     <div>
        
         { results.length !== 0
                 ? results.map(result => <SingleBar 
                     name = { result.name }
-                    url = { result.url }
+                    userAddress = { userAddress }
+                    yelpUrl = { result.url }
+                    url = { url }
+                    user = { user }
                     image_url = { result.image_url }
+                    handleGoing = { handleGoing }
+                    selectedAddress = { selectedAddress }
+                    allBarsResults = { allBarsResults }
+                    numUsersGoing = {
+                        allBarsResults.find((bar) => bar.name === result.name) !== undefined
+                            ? allBarsResults.find((bar) => bar.name === result.name).usersGoing.length
+                        : 0
+             
+                    }
                     />)
                 : 
         <Form>
@@ -21,8 +34,8 @@ const Main = ({ handleChange, handleSubmit, selectedAddress, url, results }) => 
                 onChange = { handleChange }
                 name = "address"
             />
-            <Button type = "button" onClick = { 
-                (event) => handleSubmit(event, selectedAddress, url) } > 
+            <Button byStyle = "success" onClick = { 
+                (event) => handleSubmit(event, selectedAddress, url, allUsersResults, status, user) } > 
                 Search
             </Button>
 
