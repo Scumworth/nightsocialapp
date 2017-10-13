@@ -32,7 +32,9 @@ class App extends Component {
             const user = this.props.allUsersResults.find(user => {
                 return user.name === nextProps.user;
             })  
-            this.props.updateBars(user.address, this.props.url);
+            if(user){
+                this.props.updateBars(user.address, this.props.url);
+            }
         }    
         
     }
@@ -94,7 +96,15 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleSubmit: (e, address, url, allUsersResults, status, user) => {
             e.preventDefault();
-            dispatch(getBars(address, url));
+            if(address !== null) {
+                dispatch(getBars(address, url));
+            }
+            if (allUsersResults.length === 0 && address !== null) {
+                axios.post(`${url}/allusers`, {
+                    name: user,
+                    address
+                })
+            }
             const allUserNames = allUsersResults.map((userrecord) => {
                 return userrecord.name;
             });
@@ -130,7 +140,7 @@ const mapDispatchToProps = (dispatch) => {
             const allBarNames = allBarsResults.map((barRecord) => {
                 return barRecord.name;
             })
-            if (allBarNames.indexOf(barName) !== -1) {
+            if (allBarNames.indexOf(barName) !== -1 && userName !== null) {
                 axios.put(`${url}/allbars`, {
                     barName,
                     userName
@@ -139,7 +149,7 @@ const mapDispatchToProps = (dispatch) => {
                 });
             }
 
-            else {
+            else if (userName !== null) {
                 axios.post(`${url}/allbars`, {
                 barName,
                 userName

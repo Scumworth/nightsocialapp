@@ -4,9 +4,9 @@ import React  from 'react';
 import { Jumbotron, Button, Form, FormControl, FormGroup } from 'react-bootstrap';
 import GoogleLogin from 'react-google-login';
 
-const Header = ({ status, user, handleLogin, handleAddressChange, handleChange, selectedAddress, url }) => (
+const Header = ({ status, user, handleLogin, handleAddressChange, handleChange, selectedAddress, url, userAddress }) => (
     <div>
-        <Jumbotron style = {{textAlign: 'center'}}>
+        <Jumbotron style = {{textAlign: 'center', padding: 20}}>
             <h1>FreeCodeCamp Nightlife App</h1>
             <p>(Built using the Yelp Fusion API)</p>
             <p>Login to add or remove yourself from attending a bar tonight.</p>
@@ -23,17 +23,20 @@ const Header = ({ status, user, handleLogin, handleAddressChange, handleChange, 
                 :
                 <div> 
                 <p>Hello { user }</p>
-                <Form>
-                    <FormGroup>
-                        <FormControl
-                            type = "text"
-                            placeholder = "Choose new address"
-                            onChange = { handleChange }
-                            name = "address"
-                        />
-                        <Button type="button" onClick = { (e) => handleAddressChange(e, selectedAddress, url, status, user) }>Change Address</Button>
-                    </FormGroup>
-                </Form>
+                { (userAddress || userAddress == "") 
+                    ?<Form>
+                         <FormGroup>
+                            <FormControl
+                                type = "text"
+                                placeholder = "Choose new address"
+                                onChange = { handleChange }
+                                name = "address"
+                            />
+                            <Button type="button" onClick = { (e) => handleAddressChange(e, selectedAddress, url, status, user) }>Change Address</Button>
+                        </FormGroup>
+                    </Form>
+                    : null
+                }
                 </div>
         }
     </div>

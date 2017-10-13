@@ -6,7 +6,7 @@ import SingleBar from './SingleBar';
 
 const Main = ({ handleChange, handleSubmit, handleGoing, selectedAddress, url,
     results, allUsersResults, allBarsResults, status, user, userAddress }) => (
-    <div>
+    <div style = {{ margin: 25 }}>
        
         { results.length !== 0
                 ? results.map(result => <SingleBar 
@@ -34,7 +34,7 @@ const Main = ({ handleChange, handleSubmit, handleGoing, selectedAddress, url,
                 onChange = { handleChange }
                 name = "address"
             />
-            <Button byStyle = "success" onClick = { 
+            <Button bsStyle = "success" onClick = { 
                 (event) => handleSubmit(event, selectedAddress, url, allUsersResults, status, user) } > 
                 Search
             </Button>

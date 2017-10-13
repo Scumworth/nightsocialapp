@@ -6,7 +6,7 @@ import { Grid, Row, Col, Button } from 'react-bootstrap';
 const SingleBar = ({ name, url, image_url, numUsersGoing, handleGoing, user, yelpUrl, selectedAddress, userAddress, allBarsResults }) => (
     <div>
         <a href = { yelpUrl }>
-            <div>
+            <div style = {{ backgroundColor: '#ffb42b', margin: 10, borderRadius: 10, maxWidth: 1000  }}>
                 <Grid>
                     <Row>
                         <Col xs = {2}>

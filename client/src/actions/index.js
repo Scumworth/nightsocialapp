@@ -38,11 +38,9 @@ export const getBars = (address, url)  => dispatch => {
     dispatch(requestBars(address)); 
     axios.get(`${url}/bars/${address}`)
         .then((res) => {
-            console.log(res);
             return res.data;
         }, e => console.log(e))
         .then(data => {
-            console.log(data);
             dispatch(receiveBars(address, data));
         })
 }
@@ -60,12 +58,11 @@ export const getAllBars = (url) => dispatch => {
     dispatch(requestAllBars);
     axios.get(`${url}/allbars`)
         .then((res) => {
-            console.log(res);
             return res.data;
         }, e => console.log(e))
         .then(data => {
             console.log(data);
-            if(data.length > 0) {dispatch(receiveAllBars(data));}
+            dispatch(receiveAllBars(data));
         });
 }
 
@@ -78,16 +75,15 @@ export const receiveAllUsers = (data) => ({
     allUsersResults: data.map(user => ({...user}))
 });
 
+
 export const getAllUsers = (url) => dispatch => {
     dispatch(requestAllUsers);
     axios.get(`${url}/allusers`)
         .then((res) => {
-            console.log(res);
             return res.data;
         }, e => console.log(e))
         .then(data => {
-            console.log(data);
-            if(data.length > 0) {dispatch(receiveAllUsers(data));}  
+            dispatch(receiveAllUsers(data));
         });
 }
 

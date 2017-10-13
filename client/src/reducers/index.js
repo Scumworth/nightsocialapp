@@ -6,7 +6,7 @@ import {
     SELECT_ADDRESS, INVALIDATE_ADDRESS,
     REQUEST_BARS, RECEIVE_BARS, LOGIN_USER,
     REQUEST_ALL_BARS, RECEIVE_ALL_BARS,
-    REQUEST_ALL_USERS, RECEIVE_ALL_USERS
+    REQUEST_ALL_USERS, RECEIVE_ALL_USERS,
 } from '../actions';
 
 const selectedAddress = (state = null, action) => {
@@ -50,6 +50,7 @@ const bars = (state = {
 }
 
 const allBars = (state = {
+    allBarsLoaded: false,
     isFetchingAllBars: false,
     allBarsResults: []
 }, action) => {
@@ -72,6 +73,7 @@ const allBars = (state = {
 }
 
 const allUsers = (state = {
+    allUsersLoaded: false,
     isFetchingAllUsers: false,
     allUsersResults: []
 }, action) => {
