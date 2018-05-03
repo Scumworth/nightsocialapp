@@ -18,7 +18,7 @@ ReactDOM.render(
         <ConnectedRouter history = {history}>
             <div>
             <App
-                url = 'https://yelpnightlifeapp.herokuapp.com/api'
+                url = 'http://localhost:3001/api'
             />
             </div>
         </ConnectedRouter>
