@@ -10,14 +10,15 @@ const { Bar } = require('./models/bar');
 const bodyParser = require('body-parser');
 const path = require('path');
 const yelp = require('yelp-fusion');
-let client;
-yelp.accessToken(process.env.YELP_CLIENT_ID, process.env.YELP_CLIENT_SECRET)
-    .then(response => {
-        client = yelp.client(response.jsonBody.access_token);
-    })
-    .catch(e => {
-        console.log(e);
-    });
+//let client;
+//yelp.accessToken(process.env.YELP_CLIENT_ID, process.env.YELP_CLIENT_SECRET)
+    //.then(response => {
+        //client = yelp.client(response.jsonBody.access_token);
+    //})
+    //.catch(e => {
+        //console.log(e);
+    //});
+const client = yelp.client(process.env.YELP_API_KEY);
 const app = express();
 const router = express.Router();
 const PORT = process.env.PORT || 3001;
