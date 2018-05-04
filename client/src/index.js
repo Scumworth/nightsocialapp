@@ -8,9 +8,14 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import './index.css';
 import store, { history } from './store';
-console.log('test');
-
+import WebFont from 'webfontloader';
 //import registerServiceWorker from './registerServiceWorker';
+
+WebFont.load({
+    google: {
+        families: ['Abril Fatface', 'Raleway']
+    }
+});
 
 ReactDOM.render(
     <Provider store = {store}>
