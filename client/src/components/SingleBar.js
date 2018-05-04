@@ -10,10 +10,11 @@ const SingleBar = ({ name, url, image_url, numUsersGoing, handleGoing, user, yel
                 <Grid>
                     <Row>
                         <Col xs = {2}>
-                            <img src = { image_url } height = { 75 } width = { 75 }/>
+                            <img style = {{ borderRadius: 10 }} src = { image_url } height = { 75 } width = { 75 }/>
                         </Col>
+                        <Col xs = {2}></Col>
                         <Col xs = {10}>
-                            <h3>{ name }</h3>
+                            <h3 style = {{ fontFamily: "'Abril Fatface', sans-serif" }}>{ name }</h3>
                             <Button bsStyle="info"
                                 onClick = { 
                                     event => handleGoing(event, name, user, url, userAddress, allBarsResults)

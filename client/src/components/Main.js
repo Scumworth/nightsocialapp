@@ -27,9 +27,9 @@ const Main = ({ handleChange, handleSubmit, handleGoing, selectedAddress, url,
                     }
                     />)
                 : 
-            <Form style = {{ clear: 'both', maxWidth: 1200, margin: '0 auto' }}>
+            <Form style = {{ clear: 'both', width: '90%', margin: '0 auto' }}>
             <FormControl 
-                style = {{ maxWidth: 1200, height: 75, fontFamily: "'Raleway', sans-serif", padding: 10, fontSize: 50 }}
+                style = {{ height: 75, fontFamily: "'Raleway', sans-serif", padding: 10, fontSize: 25 }}
                 type = "text"
                 placeholder = "Enter your address"
                 onChange = { handleChange }
