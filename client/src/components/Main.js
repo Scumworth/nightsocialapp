@@ -6,7 +6,7 @@ import SingleBar from './SingleBar';
 
 const Main = ({ handleChange, handleSubmit, handleGoing, selectedAddress, url,
     results, allUsersResults, allBarsResults, status, user, userAddress }) => (
-    <div style = {{ margin: 25 }}>
+    <div style = {{ marginTop: 100, marginBottom: 100 }}>
        
         { results.length !== 0
                 ? results.map(result => <SingleBar 
@@ -27,14 +27,15 @@ const Main = ({ handleChange, handleSubmit, handleGoing, selectedAddress, url,
                     }
                     />)
                 : 
-        <Form>
+            <Form style = {{ clear: 'both', maxWidth: 1200, margin: '0 auto' }}>
             <FormControl 
+                style = {{ maxWidth: 1200, height: 75, fontFamily: "'Raleway', sans-serif", padding: 10, fontSize: 50 }}
                 type = "text"
                 placeholder = "Enter your address"
                 onChange = { handleChange }
                 name = "address"
             />
-            <Button bsStyle = "success" onClick = { 
+            <Button style = {{ float: 'right' }} bsStyle = "success" onClick = { 
                 (event) => handleSubmit(event, selectedAddress, url, allUsersResults, status, user) } > 
                 Search
             </Button>

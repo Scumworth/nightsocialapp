@@ -6,10 +6,10 @@ import GoogleLogin from 'react-google-login';
 
 const Header = ({ status, user, handleLogin, handleAddressChange, handleChange, selectedAddress, url, userAddress }) => (
     <div>
-        <Jumbotron style = {{textAlign: 'center', padding: 20}}>
-            <h1>FreeCodeCamp Nightlife App</h1>
-            <p>(Built using the Yelp Fusion API)</p>
-            <p>Login to add or remove yourself from attending a bar tonight.</p>
+        <Jumbotron style = {{ textAlign: 'center', padding: 75, backgroundColor: '#000000', color: '#FFFD94' }}>
+            <h1 style = {{ fontFamily: "'Abril Fatface', sans-serif" }}>FreeCodeCamp Nightlife App</h1>
+            <p style = {{ fontFamily: "'Raleway', sans-serif" }}>(Built using the Yelp Fusion API)</p>
+            <p style = {{ fontFamily: "'Raleway', sans-serif"}}>Login to add or remove yourself from attending a bar tonight.</p>
         </Jumbotron>
         { (!status)
                 ? <GoogleLogin

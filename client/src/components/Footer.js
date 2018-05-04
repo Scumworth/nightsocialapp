@@ -2,7 +2,7 @@
 import React from 'react';
 
 const Footer = () => (
-    <div style = {{ fontSize: 10, marginTop: 30, padding: 20 }}>
+    <div style = {{ fontFamily: "'Raleway', sans-serif", fontSize: 10, marginTop: 30, padding: 20 }}>
         <p>This app is built for FreeCodeCamp.</p>
         <p>User Stories:</p>
         <ul>
